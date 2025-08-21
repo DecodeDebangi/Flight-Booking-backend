@@ -1,0 +1,1 @@
+2025-08-21 20:57:50 : error  : Something went wrong in the crud repository layer: SequelizeValidationError: notNull Violation: Airplane.modelNumber cannot be null

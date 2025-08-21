@@ -13,3 +13,7 @@ npm i sequelize
 npm i mysql2
 npm i sequelize-cli
 cd src && npx sequelize init
+cd src && npx sequelize db:create
+cd src && npx sequelize model:generate --name Airplane --attributes modelNumber:string,capacity:integer
+cd src && npx sequelize db:migrate
+npx sequelize db:migrate undo
