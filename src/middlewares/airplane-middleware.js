@@ -1,12 +1,15 @@
 const { StatusCodes } = require("http-status-codes");
 const { ErrorResponse } = require("../utils/common");
+const AppError = require("../utils/errors/app-error");
 
 function validateCreateAirplane(req, res, next) {
   if (!req.body.modelNumber) {
-    ErrorResponse.message = "Model number is required";
-    ErrorResponse.error = {
-      explanation: "Model number is not present or in incorrect format",
-    };
+    ErrorResponse.message = "Something went wrong while creating the airplane";
+    ErrorResponse.error = new AppError(
+      ["Model number is not present or in incorrect format"],
+      StatusCodes.BAD_REQUEST
+    );
+    console.log(ErrorResponse.error.explanation);
     return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
 
     //     return res.status(StatusCodes.BAD_REQUEST).json({
@@ -16,6 +19,7 @@ function validateCreateAirplane(req, res, next) {
     //       error: {
     //         explanation:
     //           "Model number is not present or in incorrect format in the request body",
+    //         statusCode: StatusCodes.BAD_REQUEST,
     //       },
     //     });
   }
