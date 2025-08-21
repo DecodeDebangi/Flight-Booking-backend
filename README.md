@@ -129,7 +129,7 @@ Helper functions, utility classes, and common functionality including:
    {
      "development": {
        "username": "root",
-       "password": "<your-password>,
+       "password": "<your-password>",
        "database": "database_development",
        "host": "127.0.0.1",
        "dialect": "mysql"
@@ -149,7 +149,6 @@ Helper functions, utility classes, and common functionality including:
        "dialect": "mysql"
      }
    }
-   
    ```
 
    **Important Notes:**
