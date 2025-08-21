@@ -25,17 +25,18 @@ function validateCreateAirplane(req, res, next) {
   }
   if (!req.body.capacity) {
     ErrorResponse.message = "Capacity is required";
-    ErrorResponse.error = {
-      explanation:
-        "Capacity is not present or in incorrect format in the request body",
-    };
+    ErrorResponse.error = new AppError(
+      ["Capacity is not present or in incorrect format"],
+      StatusCodes.BAD_REQUEST
+    );
     return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
   }
   if (req.body.capacity <= 0) {
     ErrorResponse.message = "Capacity cannot be negative";
-    ErrorResponse.error = {
-      explanation: "Capacity cannot be 0 or negative",
-    };
+    ErrorResponse.error = new AppError(
+      ["Capacity cannot be 0 or negative"],
+      StatusCodes.BAD_REQUEST
+    );
     return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
   }
 
