@@ -16,11 +16,18 @@ module.exports = (sequelize, DataTypes) => {
       modelNumber: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          isAlphanumeric: true,
+        },
       },
       capacity: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
+        validate: {
+          min: 0,
+          max: 1000,
+        },
       },
     },
     {

@@ -1,38 +1,40 @@
 const { StatusCodes } = require("http-status-codes");
+const { ErrorResponse } = require("../utils/common");
 
 function validateCreateAirplane(req, res, next) {
   if (!req.body.modelNumber) {
-    return res.status(StatusCodes.BAD_REQUEST).json({
-      message: "Model number is required",
-      success: false,
-      data: {},
-      err: {
-        explanation:
-          "Model number is not present or in incorrect format in the request body",
-      },
-    });
+    ErrorResponse.message = "Model number is required";
+    ErrorResponse.error = {
+      explanation: "Model number is not present or in incorrect format",
+    };
+    return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
+
+    //     return res.status(StatusCodes.BAD_REQUEST).json({
+    //       message: "Model number is required",
+    //       success: false,
+    //       data: {},
+    //       error: {
+    //         explanation:
+    //           "Model number is not present or in incorrect format in the request body",
+    //       },
+    //     });
   }
   if (!req.body.capacity) {
-    return res.status(StatusCodes.BAD_REQUEST).json({
-      message: "Capacity is required",
-      success: false,
-      data: {},
-      err: {
-        explanation:
-          "Capacity is not present or in incorrect format in the request body",
-      },
-    });
+    ErrorResponse.message = "Capacity is required";
+    ErrorResponse.error = {
+      explanation:
+        "Capacity is not present or in incorrect format in the request body",
+    };
+    return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
   }
   if (req.body.capacity <= 0) {
-    return res.status(StatusCodes.BAD_REQUEST).json({
-      message: "Capacity cannot be negative",
-      success: false,
-      data: {},
-      err: {
-        explanation: "Capacity cannot be 0 or negative",
-      },
-    });
+    ErrorResponse.message = "Capacity cannot be negative";
+    ErrorResponse.error = {
+      explanation: "Capacity cannot be 0 or negative",
+    };
+    return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
   }
+
   next();
 }
 

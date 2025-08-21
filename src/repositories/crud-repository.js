@@ -5,17 +5,23 @@ class CrudRepository {
     this.model = model;
   }
 
+  // async create(data) {
+  //   console.log("Inside crud repository");
+  //   try {
+  //     const result = await this.model.create(data);
+  //     return result;
+  //   } catch (error) {
+  //     logger.error(
+  //       `Something went wrong in the crud repository layer: ${error}`
+  //     );
+  //     throw error;
+  //   }
+  // }
   async create(data) {
     console.log("Inside crud repository");
-    try {
-      const result = await this.model.create(data);
-      return result;
-    } catch (error) {
-      logger.error(
-        `Something went wrong in the crud repository layer: ${error}`
-      );
-      throw error;
-    }
+
+    const result = await this.model.create(data);
+    return result;
   }
 
   async destroy(data) {
