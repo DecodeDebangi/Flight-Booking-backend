@@ -17,3 +17,5 @@ cd src && npx sequelize db:create
 cd src && npx sequelize model:generate --name Airplane --attributes modelNumber:string,capacity:integer
 cd src && npx sequelize db:migrate
 npx sequelize db:migrate undo
+npx sequelize seed:generate --name add-airplanes
+npx sequelize db:seed:all
