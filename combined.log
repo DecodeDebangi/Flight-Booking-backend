@@ -61,3 +61,19 @@ function createFormatWrap(opts) {
 2025-08-21 21:01:29 : info  : Successfully started the server
 2025-08-21 21:01:32 : info  : Successfully started the server
 2025-08-21 21:32:30 : info  : Successfully started the server
+2025-08-21 21:36:31 : error  : Something went wrong in the crud repository layer: SequelizeValidationError: notNull Violation: Airplane.modelNumber cannot be null
+2025-08-21 21:37:51 : error  : Something went wrong in the crud repository layer: SequelizeValidationError: notNull Violation: Airplane.modelNumber cannot be null
+2025-08-21 22:00:31 : info  : Successfully started the server
+2025-08-21 22:00:34 : info  : Successfully started the server
+2025-08-21 22:00:39 : info  : Successfully started the server
+2025-08-21 22:00:50 : info  : Successfully started the server
+2025-08-21 22:01:01 : info  : Successfully started the server
+2025-08-21 22:01:05 : info  : Successfully started the server
+2025-08-21 22:01:10 : info  : Successfully started the server
+2025-08-21 22:01:12 : info  : Successfully started the server
+2025-08-21 22:01:14 : info  : Successfully started the server
+2025-08-21 22:01:20 : info  : Successfully started the server
+2025-08-21 22:02:50 : info  : Successfully started the server
+2025-08-21 22:04:43 : info  : Successfully started the server
+2025-08-21 22:04:54 : info  : Successfully started the server
+2025-08-21 22:04:55 : info  : Successfully started the server
