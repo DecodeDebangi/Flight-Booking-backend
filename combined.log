@@ -1,0 +1,32 @@
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+undefined : [object Object] : [undefined] : undefined
+2025-08-21 04:25:13 : info : [undefined] : Successfully started the server
+2025-08-21 04:25:19 : info : [undefined] : Successfully started the server
+2025-08-21 04:25:40 : info : [undefined] : Successfully started the server
+2025-08-21 04:25:48 : info  : Successfully started the server
+2025-08-21 04:25:58 : info  : Successfully started the server
+2025-08-21 04:26:18 : info  : Successfully started the server
+2025-08-21 17:22:53 : info  : Successfully started the server
+function createFormatWrap(opts) {
+    return new Format(opts);
+  } : info  : Successfully started the server
+2025-08-21 17:31:30 : info  : Successfully started the server
+2025-08-21 17:31:31 : info  : Successfully started the server
+2025-08-21 17:32:30 : info  : Successfully started the server
+2025-08-21 17:34:31 : info  : Successfully started the server
