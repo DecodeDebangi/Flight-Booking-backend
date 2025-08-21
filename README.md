@@ -107,13 +107,29 @@ Helper functions, utility classes, and common functionality including:
 
 4. **Database Configuration**
 
-   Inside the `src/config` folder, create a file named `config.json` and add the following code:
+   **Step 1: Initialize Sequelize**
+
+   Go inside the `src` folder and execute the following command:
+
+   ```bash
+   npx sequelize init
+   ```
+
+   By executing this command, you will get:
+
+   - `migrations` folder
+   - `seeders` folder
+   - `config.json` file inside the `config` folder
+
+   **Step 2: Configure Database Connection**
+
+   The `config.json` file will be automatically created. Update it with your database configuration:
 
    ```json
    {
      "development": {
        "username": "root",
-       "password": null,
+       "password": "<your-password>,
        "database": "database_development",
        "host": "127.0.0.1",
        "dialect": "mysql"
@@ -133,6 +149,7 @@ Helper functions, utility classes, and common functionality including:
        "dialect": "mysql"
      }
    }
+   
    ```
 
    **Important Notes:**
