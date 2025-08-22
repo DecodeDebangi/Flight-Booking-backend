@@ -217,3 +217,5 @@ If you encounter any issues or have questions, please:
 ---
 
 **Happy Coding! 🎉**
+
+create model => repository => services => controllers => routes
