@@ -35,7 +35,6 @@ async function createAirplane(req, res) {
     //   err: {},
     // });
   } catch (error) {
-    ErrorResponse.message = error.message;
     ErrorResponse.error = {
       statusCode: error.statusCode,
       explanation: error.explanation,
@@ -44,6 +43,50 @@ async function createAirplane(req, res) {
   }
 }
 
+async function getAirplanes(req, res) {
+  try {
+    const airplanes = await AirplaneService.getAirplanes();
+    SuccessResponse.data = airplanes;
+    return res.status(StatusCodes.OK).json(SuccessResponse);
+  } catch (error) {
+    ErrorResponse.error = {
+      statusCode: error.statusCode,
+      explanation: error.explanation,
+    };
+    return res.status(error.statusCode).json(ErrorResponse);
+  }
+}
+
+async function getAirplane(req, res) {
+  try {
+    const airplane = await AirplaneService.getAirplane(req.params.id);
+    SuccessResponse.data = airplane;
+    return res.status(StatusCodes.OK).json(SuccessResponse);
+  } catch (error) {
+    ErrorResponse.error = {
+      statusCode: error.statusCode,
+      explanation: error.explanation,
+    };
+    return res.status(error.statusCode).json(ErrorResponse);
+  }
+}
+
+async function destroyAirplane(req, res) {
+  try {
+    const airplane = await AirplaneService.destroyAirplane(req.params.id);
+    SuccessResponse.data = airplane;
+    return res.status(StatusCodes.OK).json(SuccessResponse);
+  } catch (error) {
+    ErrorResponse.error = {
+      statusCode: error.statusCode,
+      explanation: error.explanation,
+    };
+    return res.status(error.statusCode).json(ErrorResponse);
+  }
+}
 module.exports = {
   createAirplane,
+  getAirplanes,
+  getAirplane,
+  destroyAirplane,
 };

@@ -10,10 +10,8 @@ async function createAirplane(data) {
     const airplane = await airplaneRepository.create(data);
     return airplane;
   } catch (error) {
-    console.log(error);
     if (error.name == "SequelizeValidationError") {
       let explanation = [];
-      console.log(error);
       error.errors.forEach((err) => {
         explanation.push(err.message);
       });
@@ -28,6 +26,57 @@ async function createAirplane(data) {
   }
 }
 
+async function getAirplanes() {
+  try {
+    const airplanes = await airplaneRepository.getAll();
+    return airplanes;
+  } catch (error) {
+    throw new AppError(
+      "Cannot fetch data of all airplanes",
+      StatusCodes.INTERNAL_SERVER_ERROR
+    );
+  }
+}
+
+async function getAirplane(id) {
+  try {
+    const airplane = await airplaneRepository.get(id);
+    return airplane;
+  } catch (error) {
+    if (error.statusCode == StatusCodes.NOT_FOUND) {
+      throw new AppError(
+        "Airplane you requested is not present",
+        StatusCodes.NOT_FOUND
+      );
+    }
+    throw new AppError(
+      "Cannot fetch data of airplane",
+      StatusCodes.INTERNAL_SERVER_ERROR
+    );
+  }
+}
+
+async function destroyAirplane(id) {
+  try {
+    const airplane = await airplaneRepository.deleteAirplane(id);
+    return airplane;
+  } catch (error) {
+    if (error.statusCode == StatusCodes.NOT_FOUND) {
+      throw new AppError(
+        "Airplane you requested to delete is not present",
+        StatusCodes.NOT_FOUND
+      );
+    }
+    throw new AppError(
+      "Cannot delete airplane",
+      StatusCodes.INTERNAL_SERVER_ERROR
+    );
+  }
+}
+
 module.exports = {
   createAirplane,
+  getAirplanes,
+  getAirplane,
+  destroyAirplane,
 };
