@@ -19,3 +19,5 @@ cd src && npx sequelize db:migrate
 npx sequelize db:migrate undo
 npx sequelize seed:generate --name add-airplanes
 npx sequelize db:seed:all
+src npx sequelize model:generate --name City --attributes name:string
+src npx sequelize db:migrate

@@ -13,11 +13,13 @@ module.exports = (sequelize, DataTypes) => {
   }
   City.init(
     {
-      name: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        len: [1, 50],
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          len: [1, 50],
+        },
       },
     },
     {
